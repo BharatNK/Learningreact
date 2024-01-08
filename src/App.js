@@ -1,19 +1,29 @@
-function Profile() {
+function Item({ name, isPacked }) {
   return (
-    <img
-      src="https://i.imgur.com/MK3eW3As.jpg"
-      alt="Katherine Johnson"
-    />
+    <li className="item">
+      {name} {isPacked && '✔'}
+    </li>
   );
 }
 
-export default function Gallery() {
+export default function PackingList() {
   return (
     <section>
-      <h1>Amazing scientists</h1>
-      <Profile />
-      <Profile />
-      <Profile />
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item
+          isPacked={true}
+          name="Space suit"
+        />
+        <Item
+          isPacked={true}
+          name="Helmet with a golden leaf"
+        />
+        <Item
+          isPacked={false}
+          name="Photo of Tam"
+        />
+      </ul>
     </section>
   );
 }
